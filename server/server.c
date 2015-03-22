@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 		buffer[nbytes] = '\0';
 		printf("server accept:%s\n", buffer);
 
-		close(sockfd);
+		close(new_fd);
 	}
 }
 
