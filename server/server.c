@@ -45,7 +45,8 @@ int main(int argc, char *argv[])
 
 	while(1)
 	{
-		if(-1==(new_fd = accept(sockfd, (struct sockaddr_in*)(&client_addr), sizeof(struct sockaddr_in))))
+		sin_size = sizeof(struct sockaddr_in);
+		if(-1==(new_fd = accept(sockfd, (struct sockaddr_in*)(&client_addr), &sin_size)))
 		{
 			fprintf(stderr, "accept error:%s\n\a", strerror(errno));
 			exit(1);

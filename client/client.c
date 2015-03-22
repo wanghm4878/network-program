@@ -39,6 +39,8 @@ int main(int argc, char *argv[])
 	server_addr.sin_family = AF_INET;
 	server_addr.sin_port = htons(portnumber);
 	server_addr.sin_addr = *((struct in_addr*)host->h_addr);
+//	server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+	printf("sinaddr:%d\n", server_addr.sin_addr);
 
 	if(-1==connect(sockfd,(struct sockaddr*)(&server_addr), sizeof(struct sockaddr)))
 	{
